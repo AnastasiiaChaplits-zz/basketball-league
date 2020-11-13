@@ -1,12 +1,12 @@
 import React from 'react';
 import useTeamNames from '../hooks/useTeamNames';
 import Sidebar from './Sidebar';
-import {Route, Switch, Link, useRouteMatch, useParams} from 'react-router-dom';
+import { Route, Switch, Link, useRouteMatch, useParams } from 'react-router-dom';
 import useTeam from '../hooks/useTeam';
 import TeamLogo from './TeamLogo';
 
-function Team () {
-    const {teamId} = useParams();
+function Team() {
+    const { teamId } = useParams();
     const {
         loading,
         response: team
@@ -15,7 +15,7 @@ function Team () {
 
     return (
         <div className='panel'>
-            <div style={{width: '100%'}}>
+            <div style={{ width: '100%' }}>
                 <TeamLogo id={team.id} className='center' />
                 <h1 className='medium-header'>{team.name}</h1>
                 <ul className='info-list row'>
@@ -26,7 +26,7 @@ function Team () {
                 <Link
                     className='center btn-main'
                     to={`/${teamId}`}>
-                        {team.name} Team Page
+                    {team.name} Team Page
                     </Link>
             </div>
         </div>
@@ -37,7 +37,7 @@ export default function Teams() {
         response: teamNames,
         loading
     } = useTeamNames();
-    const {url} = useRouteMatch();
+    const { url } = useRouteMatch();
 
     if (loading) {
         return <p>LOADING</p>
@@ -46,8 +46,8 @@ export default function Teams() {
         <div className="container two-column">
             <Sidebar
                 title='Teams'
-                list= {teamNames} />
-            
+                list={teamNames} />
+
             <Switch>
                 <Route path={`${url}/:teamId`}>
                     <Team />
