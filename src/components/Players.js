@@ -57,7 +57,7 @@ export default function Players() {
         return <p>LOADING</p>
     }
     return (
-        <div className="container two-columns">
+        <div className="container two-column">
             <Sidebar
                 title='Players'
                 list={players.map((player) => player.name)} />
