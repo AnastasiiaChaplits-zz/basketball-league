@@ -1,7 +1,8 @@
 import * as React from 'react';
 import {
   BrowserRouter as Router, 
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 import Home from './Home';
 import Players from './Players'
@@ -13,7 +14,7 @@ export default function App () {
     <Router>
       <div>
         <Navbar />
-        
+        <Switch>
         <Router path='/' exact>
           <Home />
         </Router>
@@ -23,6 +24,10 @@ export default function App () {
         <Route path='/teams'>
           <Teams />
         </Route>
+        <Route path='*'>
+          <h1 className='text-center'>404</h1>
+        </Route>
+        </Switch>
       </div>
     </Router>
   )
