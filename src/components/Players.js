@@ -4,6 +4,7 @@ import { parse } from 'query-string';
 import usePlayers from '../hooks/usePlayers';
 import Sidebar from './Sidebar';
 import slug from 'slug';
+import Loading from './Loading';
 
 
 function Player({ players }) {
@@ -54,7 +55,7 @@ export default function Players() {
     } = usePlayers(team);
 
     if (loading) {
-        return <p>LOADING</p>
+        return <Loading />
     }
     return (
         <div className="container two-column">

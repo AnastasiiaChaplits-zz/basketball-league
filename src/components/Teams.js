@@ -4,6 +4,7 @@ import Sidebar from './Sidebar';
 import { Route, Switch, Link, useRouteMatch, useParams } from 'react-router-dom';
 import useTeam from '../hooks/useTeam';
 import TeamLogo from './TeamLogo';
+import Loading from './Loading';
 
 function Team() {
     const { teamId } = useParams();
@@ -40,7 +41,7 @@ export default function Teams() {
     const { url } = useRouteMatch();
 
     if (loading) {
-        return <p>LOADING</p>
+        return <Loading />
     }
     return (
         <div className="container two-column">

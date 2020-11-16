@@ -6,6 +6,7 @@ import useTeamsArticles from '../hooks/useTeamsArticles';
 import useTeam from '../hooks/useTeam';
 import TeamLogo from './TeamLogo';
 import slug from 'slug';
+import Loading from './Loading';
 
 function useTeamPageData(teamId) {
     const {
@@ -43,7 +44,7 @@ export default function TeamPage() {
     } = useTeamPageData(teamId)
 
     if (loading) {
-        return <p>LOADING</p>
+        return <Loading />
     }
 
     if (!teamNames.includes(teamId)) {
