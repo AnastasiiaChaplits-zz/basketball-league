@@ -14,7 +14,7 @@ export default function Home() {
     return (
         <div className="container">
             <h1 className='large-header'>
-                Hash History Basketball Leagua
+                Hash History Basketball League
             </h1>
             <h3 className='header text-center'>
                 Select a team
